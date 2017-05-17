@@ -1,0 +1,295 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Merchandising Master</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  
+	  <!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  <!--Post scroll dwnld -->
+	  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+	  
+ <!--<script type="text/javascript" src="{% static 'js/default.js' %)"</script>-->
+<!-- <link rel="stylesheet" href="{% static 'static/lenovo.css' %}">-->
+
+ <!-- native scripts -->
+	<script type="text/javascript" src="/static/js/default.js"></script>
+	<script type="text/javascript" src="/static/js/table-theme.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+	<script src="/path/to/masonry.pkgd.min.js"></script><!-- I don't know if this was supposed to be a path to somewhere on my computer. I think it is. -->
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/static/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+
+
+
+	<!-- Google Webfonts -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+	<!-- Theme Style -->
+	<link rel="stylesheet" href="/static/css/style.css">
+	<link rel="stylesheet" href="/static/css/lenovo.css">
+	<!-- Menu Icon Style -->
+	<link rel="stylesheet" href="/static/css/icomoon.css">
+	<!-- Modernizr JS -->
+	<script type="text/javascript" src="/static/js/modernizr-2.6.2.min.js"></script>
+	<!-- Menu JS -->
+	<script type="text/javascript" src="/static/default.js"></script>
+	<!-- TOOL TIP JQUERY -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
+
+
+</head>
+
+<body>
+
+
+
+	<header id="fh5co-header" role="banner">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<a href="#" class="closebtn" onclick="openNav()">Menu <i class="icon-menu"></i></a>
+					<a class="navbar-brand" href="/" style="color: red;"><img src="/static/img/LenovoLogo.png" style="width:150px"></a>		
+				</div>
+			</div>
+		</div>
+
+
+		{% block mySidenav %}
+		<div id="mySidenav" class="sidenav">
+		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		 <a href="/" title="Go Home Roger!">Home</a>
+		 <a href="/links/links/" title="Too many links to count! Here is a list of all the important ecommerce links!">Links</a>
+		 <a href="/products/" title="SKU Level Products">Products</a>
+		 <a href="#" title= "Updates for All Products - organized by Consumer, Commercial or all prouducts">Product Notes</a>
+		  <a href="#" title= "Merchandising Calendar">Calendar</a>
+		  <a href="#" title= "Repository for all Merchandising content">Merch Repo</a>
+		  <br>
+		  <br>
+		  <br>
+		  <small><a href="#" title= "Found a bug? Help us out!">Submit a Bug</a></small>
+		{% endblock %}
+
+		</div>
+	</header>
+
+<div class="container text-center">
+  <h3>North America</h3>
+  <br>
+  <p><em><small>We do what we say and we are what we do.</p></em></small>
+	<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">About Us</button>
+		<div id="demo" class="collapse">
+  			<br>
+  				<p>North American eCommerce - The best in the West.</p>
+				<div class="row">
+					<div class="col-md-3">
+						<a href="mailto:webmaster@example.com" data-toggle="tooltip" title="Hooray"><img src="/static/img/piper_landrum.jpg" class="img-circle person" alt="Piper Landrum" style="width:150px"></a>
+						<br><h4>Piper Landrum</h4> 
+						<br><p><em>Sr. Manager, Web Merchandising</em></p><br>
+					</div>
+					<div class="col-md-3">
+						<a href="#" data-toggle="tooltip" title="Hooray"><img src="/static/img/clarissa_araujo.jpg" class="img-circle person" alt="Clarissa Araujo" style="width:150px"></a>
+						<br><h4>Clarissa Araujo</h4> 
+						<br><p><em>SS&P & Outlet Merchandising Manager</em></p><br>
+					</div>
+					<div class="col-md-3">
+						<img src="/static/img/nikki_dickens.jpg" class="img-circle person" alt="Nikki Dickens" style="width:150px">
+						<br><h4>Nikki Dickens</h4> 
+						<br><p><em>NA Web Merchandising Project Manager</em></p><br>
+					</div>
+					<div class="col-md-3">
+						<img src="/static/img/jamie_kokiw.jpg" class="img-circle person" alt="Jamie Kokiw" style="width:150px">
+						<br><h4>Jamie Kokiw</h4> 
+						<br><p><em>Site & Optimization Merchandising Manager</em></p><br>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3">
+						<img src="/static/img/piper_landrum.jpg" class="img-circle person" alt="Piper Landrum" style="width:150px">
+						<br><br>
+					</div>
+					<div class="col-md-3">
+						<img src="/static/img/clarissa_araujo.jpg" class="img-circle person" alt="Random Name" style="width:150px">
+						<br><br>
+					</div>
+					<div class="col-md-3">
+						<img src="/static/img/nikki_dickens.jpg" class="img-circle person" alt="Random Name" style="width:150px">
+						<br><br>
+					</div>
+					<div class="col-md-3">
+						<img src="/static/img/jamie_kokiw.jpg" class="img-circle person" alt="Random Name" style="width:150px">
+						<br><br>
+					</div>
+				</div>
+		</div>		
+</div>
+<div class="col-md-10 text-right">
+	<!-- FORMS -->
+	{% if user.is_authenticated %}
+	<a href="{% url 'post_new' %}" class="top-menu" data-toggle"tooltip" title="Click to add new post"><span class="glyphicon glyphicon-plus"></span></a>
+	{% endif %}
+		<h4>New Merch News?</h4>
+</div>
+
+<div class="row"><br><br>
+</div>
+<div class="container" style="position:static">
+
+	{% block content %}
+
+	{% endblock %}
+
+
+
+
+
+
+
+
+
+
+  			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		  <!--<div class="container">
+		  	<article class="accordion">
+				    <section id= "acc1"> 
+					      <h2><a href="#acc1"><strong>Piper Landrum</strong></a></h2>
+					      <p>
+
+						      text text text 
+					      </p>
+				    </section>
+
+				    <section id= "acc2"> 
+					      <h2><a href="#acc2"><strong>Clarissa Araujo</strong></a></h2><br>
+					      <p>
+
+					      		text text text
+					      </p>
+					</section>
+
+					<section id= "acc3"> 
+					      <h2><a href="#acc3"><strong>Nikki Dickens</strong></a></h2><br>
+					      <p>
+
+						      text text text
+					      </p>
+				    </section>
+
+				    <section id= "acc4"> 
+					      <h2><a href="#acc4"><strong>Jamie Kokiw</strong></a></h2><br>
+					      <p>
+
+						      text text text
+					      </p>
+				  </section>
+
+			</article>
+			</div>
+				  <br>
+				  <br>
+				<div class="row">
+						  <div class="col-md-2">
+				      <p><strong></strong></p><br>
+				      <img src="" class="img-circle" alt="" style="width:150px">
+				    </div>
+				    <div class="col-md-2">
+				      <p><strong>Kim Lorenz</strong></p><br>
+				      <img src="/static/img/kim_lorenz.jpg" class="img-circle person" alt="Kim Lorenz" style="width:150px">
+				    </div>
+
+				    <div class="col-md-2">
+				      <p><strong>Susan Lowerre</strong></p><br>
+				      <img src="/static/img/susan_lowerre.jpg" class="img-circle person" alt="Random Name" style="width:150px">
+				    </div>
+
+				    <div class="col-md-2">
+				      <p><strong>Anita Sivakumar</strong></p><br>
+				      <img src="/static/img/anita_sivakumar.jpg" class="img-circle person" alt="Random Name" style="width:150px">
+				    </div>
+
+				  	<div class="col-md-2">
+				      <p><strong>Dawn Wages</strong></p><br>
+				      <img src="/static/img/dawn_wages.jpg" class="img-circle person" alt="Random Name" style="width:150px">
+				  </div>
+				  </div>
+
+				</div>
+		  </div>
+
+
+
+		</div>
+
+
+<br>
+<br> -->
+<script src="/static/js/jquery-1.11.3.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+
+</body>
