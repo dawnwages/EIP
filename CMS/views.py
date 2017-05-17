@@ -7,6 +7,9 @@ from django.conf import settings
 from .forms import UploadFileForm
 from .models import Post
 
+def post_list(request):
+	return render(request, 'CMS/post_list.html', {})
+
 def simple_upload(request):
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)
