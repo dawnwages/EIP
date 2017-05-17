@@ -160,13 +160,13 @@
 <div class="row"><br><br>
 </div>
 <div class="container" style="position:static">
-
+<a href="{% url 'post_new' %}" class="top-menu" data-toggle"tooltip" title="Click to add new post"><span class="glyphicon glyphicon-plus">
         <div class="container">
 		  <h2>Merch News</h2>
 		  <p>We welcome you to the merchandising team newsletter. Keep abreast of all North America eCommerce updates and changes on-glass</p>     
 
 		  <div class="container">
-    <!--Row with two equal columns-->
+    <!--Row with equal columns-->
 		    <div class="row">
 		    	{% for post in posts %}
 		    	<div class="fh5co-main">
@@ -175,7 +175,7 @@
            			<div class="text-left">
 				    <h2>{{ post.title }}</h2>
 		            <p><html>{{ post.text|slice:":255" }}</html></p>
-		          
+		          <a href ="{% url 'post_detail' pk=post.pk %}" ><button type="button" class="btn btn-info">Info</button></a>
 		            </div>
            		</div>
            		</div>
