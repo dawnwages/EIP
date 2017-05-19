@@ -28,7 +28,7 @@ class Post(models.Model):
 			default=Update_2,
 			)
 		text = models.TextField(blank=True)
-		asset = models.FileField(upload_to='post_assets/%Y/%m/')
+		asset = models.FileField(upload_to='post_assets/%Y/%m/',blank=True)
 		created_date = models.DateTimeField(
 			default=timezone.now)
 		published_date = models.DateTimeField(

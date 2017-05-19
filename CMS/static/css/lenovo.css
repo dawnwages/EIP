@@ -180,4 +180,7 @@ body {
     color:#fff;
 }
 
-/*POST LIST BOARD*/
+/*POST LIST BOARD - dylay dynamic layout*/
+
+#dylay { margin: 0; padding: 0; list-style: none; }
+    #dylay li { float: left; margin: 2px; border-radius: 5px; padding: 2px 5px; font-size: 10px; }

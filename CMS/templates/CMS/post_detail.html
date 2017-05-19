@@ -8,10 +8,11 @@
             </div>
         {% endif %}
         {% if user.is_authenticated %}
-        <img src="{{ post.asset }}" style="height:300px">
-        {{ post.asset }}
-        <h1>{{ post.title }}</h1>
         {% endif %}
+        <img src="../../media/{{ post.asset }}" style="max-width:100%"><br> 
+        ../../media/{{ post.asset }}
+        <h1>{{ post.title }}</h1>
+        
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
 {% endblock %}

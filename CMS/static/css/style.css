@@ -2011,13 +2011,7 @@ pre code {
   padding-left: 20px;
   padding-right: 20px;
 }
-.container:before, .container:after {
-  content: " ";
-  display: table;
-}
-.container:after {
-  clear: both;
-}
+
 @media (min-width: 768px) {
   .container {
     width: 760px;
@@ -2040,13 +2034,13 @@ pre code {
   padding-left: 20px;
   padding-right: 20px;
 }
-.container-fluid:before, .container-fluid:after {
+/*.container-fluid:before, .container-fluid:after {
   content: " ";
   display: table;
 }
 .container-fluid:after {
   clear: both;
-}
+}*/
 
 .row {
   margin-left: -20px;

@@ -1,0 +1,133 @@
+{% load staticfiles %}
+
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Merchandising Master</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--Post List -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="/static/css/pinbox.css" rel="stylesheet">
+<script src="/static/js/jquery.js"></script>
+<script src="/static/js/jquery.pinbox.min.js"></script>
+<script>
+            $(document).ready(function () {
+                /**
+                 *  create new pinboxes! ;)
+                 *  
+                 *  avaiable parameters in the options:
+                 *   every new item in the boxes uses the new item Indicator
+                 *   
+                 *   newitemindicator : "new", 
+                 *   subcontainer : ".prodcont" 
+                 */
+                 $('#categoryProductContainer').pinbox().hide(0).fadeIn(1000);
+            });
+        </script>
+
+
+<!-- Old -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--Post scroll dwnld -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+    
+ <!--<script type="text/javascript" src="{% static 'js/default.js' %)"</script>-->
+<!-- <link rel="stylesheet" href="{% static 'static/lenovo.css' %}">-->
+
+ <!-- native scripts -->
+  <script type="text/javascript" src="/static/js/default.js"></script>
+
+
+  <!-- Google Webfonts -->
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+  <!-- Theme Style -->
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/lenovo.css">
+  <!-- Menu Icon Style -->
+  <link rel="stylesheet" href="/static/css/icomoon.css">
+
+  <!-- Menu JS -->
+  <script type="text/javascript" src="/static/default.js"></script>
+
+
+</head>
+<body>
+  <div class="row">
+  <header id="fh5co-header" role="banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <a href="#" class="closebtn" onclick="openNav()">Menu <i class="icon-menu"></i></a>
+          <a class="navbar-brand" href="/" style="color: red;"><img src="/static/img/LenovoLogo.png" style="width:150px"></a>   
+        </div>
+      </div>
+    </div>
+
+        {% block mySidenav %}
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+     <a href="/" title="Go Home Roger!">Home</a>
+     <a href="/links/links/" title="Too many links to count! Here is a list of all the important ecommerce links!">Links</a>
+     <a href="/products/" title="SKU Level Products">Products</a>
+     <a href="#" title= "Updates for All Products - organized by Consumer, Commercial or all prouducts">Product Notes</a>
+      <a href="#" title= "Merchandising Calendar - merchandising activities only. Does not reflect the information on the marketing and merchandising calendar.">Calendar</a>
+      <a href="#" title= "Repository for all Merchandising content">Merch Repo</a>
+      <br>
+      <br>
+      <br>
+      <small><a href="#" title= "Found a bug? Help us out!">Submit a Bug</a></small>
+    {% endblock %}
+    </div>
+  </header>
+  </div>
+
+
+
+ <div class="row">
+<div style="position:relative" id="categoryProductContainer">
+
+{% for post in posts %}
+  <div class="span2 pcon prodcont actioninside new" >
+
+    <!--  <a class=" " href="#" > --> 
+    <img class="media-object" style="display:block;width:150px; height:auto;" src="{{ post.Update_Choices }}"> 
+    <!-- </a> -->
+      <div class="">
+      <h4 class="">{{ post.title }}</h4>
+      <h6 class="">{{ post.text|slice:":150"}}</h6>
+      <p class=""> </p>
+    <div class="action" style="display: block;"> <a class="btn btn-mini">share on facebook</a> <a class="btn btn-mini">more information</a> 
+    </div>
+      </div>
+  </div>
+{% endfor %} 
+</div>
+</div>
+</body>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</html>

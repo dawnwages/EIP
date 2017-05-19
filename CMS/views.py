@@ -5,7 +5,7 @@ from django.shortcuts import render, get_object_or_404
 from django.conf import settings
 from django.utils import timezone
 #from django.CMS.files.storage import FileSystemStorage
-from .forms import UploadFileForm
+from .forms import PostForm
 from .models import Post
 
 def post_list(request):
@@ -18,14 +18,15 @@ def post_detail(request, pk):
     return render(request, 'CMS/post_detail.html', {'post': post})
 
 
-def simple_upload(request):
+def post_new(request):
     if request.method == 'POST':
-        form = UploadFileForm(request.POST, request.FILES)
+        form = PostForm(request.POST, request.FILES)
         if form.is_valid():
-            instance = ModelWithFileField(file_field=request.FILES['myfile'])
-            instance.save()
+            form.save()
             return redirect('home')
     else:
-        form = UploadFileForm()
-    return render(request, 'CMS/simple_upload.html', {'form': form})
+        form = PostForm()
+    return render(request, 'CMS/post_edit.html', {
+        'form': form
+    })
 

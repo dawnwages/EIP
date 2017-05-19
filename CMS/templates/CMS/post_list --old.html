@@ -18,14 +18,12 @@
 <!-- <link rel="stylesheet" href="{% static 'static/lenovo.css' %}">-->
 
  <!-- native scripts -->
-	<script type="text/javascript" src="/static/js/default.js"></script>
-	<script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
-	<script src="/path/to/masonry.pkgd.min.js"></script><!-- I don't know if this was supposed to be a path to somewhere on my computer. I think it is. -->
-	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+	<!-- <script type="text/javascript" src="/static/js/default.js"></script>
+	<script type="text/javascript" src="/static/js/table-theme.js"></script>-->
+	<!--<script src="/path/to/masonry.pkgd.min.js"></script> I don't know if this was supposed to be a path to somewhere on my computer. I think it is. -->
+	<!--<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/static/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
-	<link rel="stylesheet" href="{% static 'css/lenovo.css' %}">
-
+	<link rel="stylesheet" href="/static/css/table-theme.css">-->
 
 
 	<!-- Google Webfonts -->
@@ -33,14 +31,36 @@
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
 	<!-- Theme Style -->
-	<link rel="stylesheet" href="/static/css/style.css">
-	<link rel="stylesheet" href="/static/css/lenovo.css">
+	 <!--<link rel="stylesheet" href="/static/css/style.css">
+	<link rel="stylesheet" href="/static/css/lenovo.css">-->
 	<!-- Menu Icon Style -->
-	<link rel="stylesheet" href="/static/css/icomoon.css">
+	<link rel="stylesheet" href="/static/css/icomoon.css">-->
 	<!-- Modernizr JS -->
-	<script type="text/javascript" src="/static/js/modernizr-2.6.2.min.js"></script>
+	<!-- <script type="text/javascript" src="/static/js/modernizr-2.6.2.min.js"></script>-->
 	<!-- Menu JS -->
 	<script type="text/javascript" src="/static/default.js"></script>
+	<!-- pin Box layout-->
+	<link href="/static/css/bootstrap.css" rel="stylesheet">
+	<link href="/static/css/pinbox.css" rel="stylesheet">
+	<script src="/static/js/jquery.js"></script>
+	<script src="/static/js/jquery.pinbox.min.js"></script>
+
+	<script>
+            $(document).ready(function () {
+                /**
+                 *  create new pinboxes! ;)
+                 *  
+                 *  avaiable parameters in the options:
+                 *   every new item in the boxes uses the new item Indicator
+                 *   
+                 *   newitemindicator : "new", 
+                 *   subcontainer : ".prodcont" 
+                 */
+                 $('#categoryProductContainer').pinbox().hide(0).fadeIn(1000);
+            });
+        </script>
+
+
 	<!-- TOOL TIP JQUERY -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 
@@ -62,7 +82,6 @@
 			</div>
 		</div>
 
-
 		{% block mySidenav %}
 		<div id="mySidenav" class="sidenav">
 		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -70,16 +89,40 @@
 		 <a href="/links/links/" title="Too many links to count! Here is a list of all the important ecommerce links!">Links</a>
 		 <a href="/products/" title="SKU Level Products">Products</a>
 		 <a href="#" title= "Updates for All Products - organized by Consumer, Commercial or all prouducts">Product Notes</a>
-		  <a href="#" title= "Merchandising Calendar">Calendar</a>
+		  <a href="#" title= "Merchandising Calendar - merchandising activities only. Does not reflect the information on the marketing and merchandising calendar.">Calendar</a>
 		  <a href="#" title= "Repository for all Merchandising content">Merch Repo</a>
 		  <br>
 		  <br>
 		  <br>
 		  <small><a href="#" title= "Found a bug? Help us out!">Submit a Bug</a></small>
 		{% endblock %}
-
 		</div>
 	</header>
+
+
+</div>	
+	<div class="container">
+	        <div class="row">
+	            <div class="col-xs-8">
+	                <div class="main-content"></div>
+	            </div>
+	            <div class="col-xs-4">
+	                <!--Nested rows within a column-->
+	                <div class="row">
+	                    <div class="col-xs-12">
+	                        <div class="sidebar-content"></div>
+	                    </div>
+	                </div>
+					<div class="row">
+	                    <div class="col-xs-12">
+	                        <div class="sidebar-content"></div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+</div>	    
+
 
 <div class="container text-center">
   <h3>North America</h3>
@@ -113,188 +156,55 @@
 				</div>
 				<div class="row">
 					<div class="col-md-3">
-						<img src="/static/img/anita_sivakumar.jpg" class="img-circle person" alt="Anita Sivakumar" style="width:150px">
-						<br><h4>Anita Sivakumar</h4> 
-						<br><p><em>Creative Lead and Merchandising Manager</em></p><br>
+						<img src="/static/img/piper_landrum.jpg" class="img-circle person" alt="Piper Landrum" style="width:150px">
+						<br><br>
 					</div>
 					<div class="col-md-3">
-						<a href="mailto:webmaster@example.com" data-toggle="tooltip" title="Hooray"><img src="/static/img/susan_lowerre.jpg" class="img-circle person" alt="Susan Lowerre" style="width:150px"></a>
-						<br><h4>Susan Lowerre</h4> 
-						<br><p><em>Campaigns and UX Web Merchandising Manager</em></p><br>
+						<img src="/static/img/clarissa_araujo.jpg" class="img-circle person" alt="Random Name" style="width:150px">
+						<br><br>
 					</div>
 					<div class="col-md-3">
-						<a href="#" data-toggle="tooltip" title="Hooray"><img src="/static/img/Dawn_Wages.jpg" class="img-circle person" alt="Dawn Wages" style="width:150px"></a>
-						<br><h4>Dawn Wages</h4> 
-						<br><p><em>Consumer Product Merchandising Manager</em></p><br>
+						<img src="/static/img/nikki_dickens.jpg" class="img-circle person" alt="Random Name" style="width:150px">
+						<br><br>
 					</div>
 					<div class="col-md-3">
-						<img src="/static/img/kim_lorenz.jpg" class="img-circle person" alt="Kim Lorenz" style="width:150px">
-						<br><h4>Kim Lorenz</h4> 
-						<br><p><em>Commercial Product Merchandising Manager</em></p><br>
+						<img src="/static/img/jamie_kokiw.jpg" class="img-circle person" alt="Random Name" style="width:150px">
+						<br><br>
 					</div>
-				</div>				
+				</div>
 		</div>		
 </div>
 <div class="col-md-10 text-right">
 	<!-- FORMS -->
 	{% if user.is_authenticated %}
-	<a href="{% url 'post_new' %}" class="top-menu" data-toggle"tooltip" title="Click to add new post"><span class="glyphicon glyphicon-plus"></span></a>
-	<a href="{% url 'post_new' %}" class="top-menu" data-toggle"tooltip" title="Click to add new post"><h4>New Merch News?</h4></a>
+	
 	{% endif %}
-		
+		<h4>New Merch News?</h4>
 </div>
 
 <div class="row"><br><br>
 </div>
 <div class="container" style="position:static">
-
-	{% block content %}
-
-	{% endblock %}
-
-
-
-
-
-
-
-
-
-
-  			
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		  <!--<div class="container">
-		  	<article class="accordion">
-				    <section id= "acc1"> 
-					      <h2><a href="#acc1"><strong>Piper Landrum</strong></a></h2>
-					      <p>
-
-						      text text text 
-					      </p>
-				    </section>
-
-				    <section id= "acc2"> 
-					      <h2><a href="#acc2"><strong>Clarissa Araujo</strong></a></h2><br>
-					      <p>
-
-					      		text text text
-					      </p>
-					</section>
-
-					<section id= "acc3"> 
-					      <h2><a href="#acc3"><strong>Nikki Dickens</strong></a></h2><br>
-					      <p>
-
-						      text text text
-					      </p>
-				    </section>
-
-				    <section id= "acc4"> 
-					      <h2><a href="#acc4"><strong>Jamie Kokiw</strong></a></h2><br>
-					      <p>
-
-						      text text text
-					      </p>
-				  </section>
-
-			</article>
-			</div>
-				  <br>
-				  <br>
-				<div class="row">
-						  <div class="col-md-2">
-				      <p><strong></strong></p><br>
-				      <img src="" class="img-circle" alt="" style="width:150px">
-				    </div>
-				    <div class="col-md-2">
-				      <p><strong>Kim Lorenz</strong></p><br>
-				      <img src="/static/img/kim_lorenz.jpg" class="img-circle person" alt="Kim Lorenz" style="width:150px">
-				    </div>
-
-				    <div class="col-md-2">
-				      <p><strong>Susan Lowerre</strong></p><br>
-				      <img src="/static/img/susan_lowerre.jpg" class="img-circle person" alt="Random Name" style="width:150px">
-				    </div>
-
-				    <div class="col-md-2">
-				      <p><strong>Anita Sivakumar</strong></p><br>
-				      <img src="/static/img/anita_sivakumar.jpg" class="img-circle person" alt="Random Name" style="width:150px">
-				    </div>
-
-				  	<div class="col-md-2">
-				      <p><strong>Dawn Wages</strong></p><br>
-				      <img src="/static/img/dawn_wages.jpg" class="img-circle person" alt="Random Name" style="width:150px">
-				  </div>
-				  </div>
-
-				</div>
-		  </div>
-
-
-
-		</div>
-
-
-<br>
-<br> -->
-<script src="/static/js/jquery-1.11.3.min.js"></script>
-<script src="/static/js/bootstrap.min.js"></script>
-
-</body>
+<a href="{% url 'post_new' %}" class="top-menu" data-toggle"tooltip" title="Click to add new post"><span class="glyphicon glyphicon-plus"></span></a>
+        <div class="container">
+		  <h2>Merch News</h2>
+		  <p>We welcome you to the merchandising team newsletter. Keep abreast of all North America eCommerce updates and changes on-glass</p>     
+
+		  <div class="container">
+    <!--Row with equal columns-->
+		    <div class="row">
+		    	{% for post in posts %}
+		    	<div class="fh5co-main">
+           		<div class="col-sm-4 text-center">
+           		<img src="{{ post.Update_Choices }}" style="height:300px">
+           			<div class="text-left">
+				    <h2>{{ post.title }}</h2>
+		            <p><html>{{ post.text|slice:":255" }}</html></p>
+		          <a href ="{% url 'post_detail' pk=post.pk %}" ><button type="button" class="btn btn-info">Info</button></a>
+		            </div>
+           		</div>
+           		</div>
+           		<div class="clearfix visible-xs-block"></div>
+		        {% endfor %}
+		    </div>
+		    </div>
