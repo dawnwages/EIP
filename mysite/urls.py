@@ -23,6 +23,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('CMS.urls')),
+    url(r'^product/', include('product.urls')),
 ]
 
 #In the development server you may serve the user uploaded files (media) using django.contrib.staticfiles.views.serve() view

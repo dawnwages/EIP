@@ -1,0 +1,42 @@
+{% extends 'CMS/base.html' %}
+
+{% block content %}
+	
+        <div class="container">
+		  <h2>Onsite SKUS</h2>
+		  <p>We welcome you to the merchandising team newsletter. Keep abreast of all North America eCommerce updates and changes on-glass</p>            
+		 <div class="table-responsive">
+		  <table id="table example" class="table table-striped" cellspacing="0" width="100%">
+		    <thead>
+		      <tr>
+		        <th>Date</th>
+		        <th>Article Number</th>
+		        <th>SKU</th>
+		        <th>Friendly Name</th>
+		        <th>Hybris Link</th>
+		      </tr>
+		    </thead>
+		    <tfoot>
+		      <tr>
+		        <th>Date</th>
+		        <th>Article Number</th>
+		        <th>SKU</th>
+		        <th>Friendly Name</th>
+		        <th>Hybris Link</th>
+		      </tr>
+		    </tfoot>
+		    <tbody>
+		    {% for sku in skus %}
+		      <tr>
+		        <td> {{ sku.live_date }} </td>
+		        <td> <a href="">{{ sku.Sku_Article }}</a></td>
+		        <td> <a href="">{{ sku.Sku_Num }}</a></td>
+		        <td> <a href="">{{ sku.Friendly_Name }}</a></td>
+		        <td> <a href="">{{ sku.SKU_Link }}</a></td>
+		      </tr>
+		     {% endfor %}
+		    </tbody>
+		  </table>
+		</div>
+		</div>
+{% endblock %}
