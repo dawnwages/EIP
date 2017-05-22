@@ -1,0 +1,42 @@
+{% extends 'CMS/base.html' %}
+
+{% block content %}
+	
+        <div class="container">
+		  <h2>Onsite SKUS</h2>
+		  <p>We welcome you to the merchandising team newsletter. Keep abreast of all North America eCommerce updates and changes on-glass</p>            
+		 <div class="table-responsive">
+		  <table id="table example" class="table table-striped" cellspacing="0" width="100%">
+		    <thead>
+		      <tr>
+		        <th>Date</th>
+		        <th>Article Number</th>
+		        <th>Series Name</th>
+		        <th>Device Type</th>
+		        <th>Segment</th>
+		      </tr>
+		    </thead>
+		    <tfoot>
+		      <tr>
+		        <th>Date</th>
+		        <th>Article Number</th>
+		        <th>Series Name</th>
+		        <th>Device Type</th>
+		        <th>Segment</th>
+		      </tr>
+		    </tfoot>
+		    <tbody>
+		    {% for Article in Articles %}
+		      <tr>
+		        <td> {{ Article.live_date }} </td>
+		        <td> <a href="{% url 'article_detail' pk=Article.pk %}">{{ Article.Article_Num }}</a></td>
+		        <td> <a href="">{{ Article.Series_Name }}</a></td>
+		        <td> <a href="">{{ Article.Device_Choice }}</a></td>
+		        <td> <a href="">{{ Article.BrandSeg_Choice }}</a></td>
+		      </tr>
+		     {% endfor %}
+		    </tbody>
+		  </table>
+		</div>
+		</div>
+{% endblock %}

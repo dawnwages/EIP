@@ -5,8 +5,7 @@
         <div class="container">
 		  <h2>Onsite SKUS</h2>
 		  <p>We welcome you to the merchandising team newsletter. Keep abreast of all North America eCommerce updates and changes on-glass</p>            
-		 <div class="table-responsive">
-		  <table id="table example" class="table table-striped" cellspacing="0" width="100%">
+		  <table id="table example" class="table table-striped">
 		    <thead>
 		      <tr>
 		        <th>Date</th>
@@ -14,29 +13,31 @@
 		        <th>SKU</th>
 		        <th>Friendly Name</th>
 		        <th>Hybris Link</th>
+		        <th>Operating System</th>
+		        <th>Processor</th>
+		        <th>Memory</th>
+		        <th>Hard Drive</th>
+		        <th>Screen Size</th>
+		        <th>Price Range</th>
 		      </tr>
 		    </thead>
-		    <tfoot>
-		      <tr>
-		        <th>Date</th>
-		        <th>Article Number</th>
-		        <th>SKU</th>
-		        <th>Friendly Name</th>
-		        <th>Hybris Link</th>
-		      </tr>
-		    </tfoot>
 		    <tbody>
-		    {% for sku in skus %}
+		    {% for Sku in Skus %}
 		      <tr>
-		        <td> {{ sku.live_date }} </td>
-		        <td> <a href="">{{ sku.Sku_Article }}</a></td>
-		        <td> <a href="">{{ sku.Sku_Num }}</a></td>
-		        <td> <a href="">{{ sku.Friendly_Name }}</a></td>
-		        <td> <a href="">{{ sku.SKU_Link }}</a></td>
+		        <td> {{ Sku.live_date }} </td>
+		        <td> {{ Sku.Sku_Article }}</a></td>
+		        <td> <a href="{% url 'sku_detail' pk=Sku.pk %}">{{ Sku.Sku_Num }}</a></td>
+		        <td> {{ Sku.Friendly_Name }}</a></td>
+		        <td> <a href="{{ Sku.SKU_Link }}">{{ Sku.SKU_Link }}</a></td>
+		        <td> {{ Sku.os_choice }} </td>
+		        <td> {{ Sku.processor_choice }} </td>
+		        <td> {{ Sku.memory_choice }}GB </td>
+		        <td> {{ Sku.hd_choice }}GB </td>
+		        <td> {{ Sku.ss_choice }} </td>
+		        <td> {{ Sku.Price_Choice }} </td>
 		      </tr>
 		     {% endfor %}
 		    </tbody>
 		  </table>
-		</div>
 		</div>
 {% endblock %}

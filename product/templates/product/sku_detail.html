@@ -2,17 +2,33 @@
 
 {% block content %}
     <div class="post">
-        {% if post.published_date %}
+        {% if Sku.live_date %}
             <div class="date">
-                {{ post.published_date }}
+                {{ Sku.created_date }}
             </div>
         {% endif %}
         {% if user.is_authenticated %}
         {% endif %}
-        <img src="../../media/{{ post.asset }}" style="max-width:100%"><br> 
-        ../../media/{{ post.asset }}
-        <h1>{{ post.title }}</h1>
+
+        <h1>{{ Sku.Friendly_Name }}</h1>
+        <h2>{{ Sku.Sku_Article }}</h2>
+        <p><br> {{ Sku.SkuChoices }}</p>
+
         
-        <p>{{ post.text|linebreaksbr }}</p>
+        <p>  Country: {{ Sku.Country_Choice }}
+        <br> Status: {{ Sku.Status_Choices }}
+        <br> Sku Type: {{ Sku.SKU_Choices}} 
+        <br> Link: {{ Sku.SKU_Link}}</p>
+<h2>Model Features</h2>
+        <p> Processor: {{ Sku.processor_choice }}
+        <br> Operating System: {{ Sku.os_choice }}
+        <br> Memory: {{ Sku.memory_choice }}
+        <br> Hard Drive: {{ Sku.hd_choice }}
+        <br> Display: {{ Sku.display_choice }}
+        <br> Screen Size: {{ Sku.ss_choice }}
+        <br> Color: {{ Sku.color_choice }}
+        <br> Live Date: {{ Sku.live_date }}
+        <br> Price Range: {{ Sku.Price_Choice}}</p>
+
     </div>
 {% endblock %}
