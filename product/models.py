@@ -153,7 +153,7 @@ class article(models.Model):
 			(CS, 'Coming Soon'),
 			(EOL, 'End of Life'), 
 			)
-		Device_Choice = models.CharField(
+		Device_Status = models.CharField(
 			max_length=200,
 			choices=Status_Type,
 			default= Live,
