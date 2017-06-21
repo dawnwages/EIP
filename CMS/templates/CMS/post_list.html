@@ -49,39 +49,45 @@ and open the template in the editor.
 		<script type="text/javascript" src="/static/default.js"></script>
 	</head>
 <body>
+			<section>
+			<div class="container-fluid">
+			<div class="jumbotron">
+			<div class="row">
+			<div class="col-md-3 center">
+<a href="/" title="Go Home Roger!">Home</a>
+			</div>
+			<div class="col-md-3 center">
+<a href="/links/" title="Too many links to count! Here is a list of all the important ecommerce links!">Links</a>
+			</div>
+			<div class="col-md-3 center">
+<a href="/product/sku_list/" title="SKU Level Products">Products by Model</a>
+			</div>
+			<div class="col-md-3 center">
+<a href="/product/article_list/" title= "Updates for All Products - organized by Consumer, Commercial or all prouducts">Product Notes</a>
+			</div>
+			<div class="col-md-3 center">
+<a href="#" title= "Merchandising Calendar">Calendar</a>
+			</div>
+			<div class="col-md-3 center">
+<a href="#" title= "Repository for all Merchandising content">Merch Repo</a>
+			</div>
+			<div class="col-md-3 center">
+<a href="#" title= "Found a bug? Help us out!">Submit a Bug</a>
+			</div>
+			</div>
+			</div>
+			</div>
+			</section>
 
 		<!-- Banner -->
 			<section id="banner">
 
-			  <div class="row">
-				  <header id="fh5co-header" role="banner">
-				    <div class="container">
-				      <div class="row">
-				        <div class="col-md-12">
-				          <a href="#" class="closebtn" onclick="openNav()">Menu <i class="icon-menu"></i></a>
-				          <a class="navbar-brand" href="/" style="color: red;"><img src="/static/img/LenovoLogo.png" style="width:150px"></a>   
-				        </div>
-				      </div>
-				    </div>
+			  <div class="container-fluid">
+				          <img src="/static/img/LenovoLogo.png" style="width:150px">
+				          <br>
+				          <br>   
 			</div>
-
-        {% block mySidenav %}
-		<div id="mySidenav" class="sidenav">
-		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-		 <a href="/" title="Go Home Roger!">Home</a>
-		 <a href="/links/" title="Too many links to count! Here is a list of all the important ecommerce links!">Links</a>
-		 <a href="/product/sku_list/" title="SKU Level Products">Products by Model</a>
-		 <a href="/product/article_list/" title="Article Level Products">Products by Article</a>
-		 <a href="/product/article_list/" title= "Updates for All Products - organized by Consumer, Commercial or all prouducts">Product Notes</a>
-		  <a href="#" title= "Merchandising Calendar">Calendar</a>
-		  <a href="#" title= "Repository for all Merchandising content">Merch Repo</a>
-		  <br>
-		  <br>
-		  <br>
-		  <small><a href="#" title= "Found a bug? Help us out!">Submit a Bug</a></small>
-    {% endblock %}
-    </div>
-  </header>
+   			
   </div>
 				<h2><strong>Merchandising Master</strong> is a source for all of your most pressing North American Merchandising News</h2>
 				<p>Brought to you by the Merch Team</p>
@@ -139,7 +145,7 @@ and open the template in the editor.
 					</div>		
 			</section>
 
-
+			
 
 
 
