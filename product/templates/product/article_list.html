@@ -11,6 +11,8 @@
 		      <tr>
 		        <th>Date</th>
 		        <th>Article Number</th>
+		        <th>Device Type</th>
+		        <th>Device Status</th>
 		        <th>Series Name</th>
 		        <th>Device Type</th>
 		        <th>Segment</th>
@@ -20,6 +22,8 @@
 		      <tr>
 		        <th>Date</th>
 		        <th>Article Number</th>
+		        <th>Device Type</th>
+		        <th>Device Status</th>
 		        <th>Series Name</th>
 		        <th>Device Type</th>
 		        <th>Segment</th>
@@ -28,6 +32,8 @@
 		    <tbody>
 		    {% for Article in Articles %}
 		      <tr>
+		        <td> {{ Article.live_date }} </td>
+		        <td> {{ Article.Device_Choice }} </td>
 		        <td> {{ Article.live_date }} </td>
 		        <td> <a href="{% url 'article_detail' pk=Article.pk %}">{{ Article.Article_Num }}</a></td>
 		        <td> <a href="">{{ Article.Series_Name }}</a></td>

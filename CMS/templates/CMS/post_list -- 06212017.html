@@ -142,7 +142,14 @@ and open the template in the editor.
 
 
 
-
+<div class="col-md-10 text-right">
+	<!-- FORMS -->
+	{% if user.is_authenticated %}
+	<a href="{% url 'post_new' %}" class="top-menu" data-toggle"tooltip" title="Click to add new post"><span class="glyphicon glyphicon-plus"></span></a>
+	<a href="{% url 'post_new' %}" class="top-menu" data-toggle"tooltip" title="Click to add new post"><h4>New Merch News?</h4></a>
+	{% endif %}
+		
+</div>
 
 		<!-- One -->
 			<section id="one" class="wrapper special">
@@ -249,29 +256,20 @@ and open the template in the editor.
 			</section>
 
 		<!-- Two -->
-
-<div class="col-md-10 text-right">
-	<!-- FORMS -->
-	{% if user.is_authenticated %}
-	<a href="{% url 'post_new' %}" class="top-menu" data-toggle"tooltip" title="Click to add new post"><span class="glyphicon glyphicon-plus"></span></a>
-	<a href="{% url 'post_new' %}" class="top-menu" data-toggle"tooltip" title="Click to add new post"><h4>New Merch News?</h4></a>
-	{% endif %}
-		
-</div>
 			<section id="one" class="wrapper special">
 				<div class="inner">
 					<header class="major">
-						<h2>MERCH NEWS</h2>
+						<h2>Merchandising Team</h2>
 					</header>
 
 					<div class="features">
 					{% for post in posts %}
 						<div class="feature">
 							<img src="{{ post.Update_Choices }}" style="width:90%">
-							<a href="https://docs.google.com/presentation/d/1lHFrkVCj0sGKA3mIMIlLGMSKG4MjsCazYXh-kR7mgqE/edit#slide=id.p" target="_blank">
+							<a href="https://docs.google.com/presentation/d/1lHFrkVCj0sGKA3mIMIlLGMSKG4MjsCazYXh-kR7mgqE/edit#slide=id.p" target="_blank"><i class="fa fa-file-powerpoint-o"></i>
 							<h3>{{ post.title }}</h3>
 							<em>{{ post.published_date }}</em>
-							<p>{{ post.text|slice:":200"}}</p></a>
+							<p>{{ post.text|slice:":50"}}</p></a>
 							<a href ="{% url 'post_detail' pk=post.pk %}" ><button type="button" class="btn btn-info">Info</button></a>
 						</div>
 					{% endfor %}
