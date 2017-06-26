@@ -3,6 +3,19 @@
 {% block content %}
 	
         <div class="container">
+
+        	{% for x in portfolio %}
+        		<p>{{ x.live_date }}    {{ x.Article_Num }}    {{ x.Sku_Num }} {{ x.Sku_Num }}<p> 
+        	{% endfor %}
+
+        	{% for site in sites %}
+        		<p>{{ site.live_date }}    {{ site.Article_Num }}    {{ site.Sku_Num }} {{ sku.Sku_Num }}<p> 
+        	{% endfor %}
+
+        	{% for sku in object_list %}
+			<li>{{sku.Sku_Num}} {{ sku.live_date }} {{ site.Article_Num }} </li>
+			{% endfor %}
+
 		  <h2>Onsite SKUS</h2>
 		  <p>We welcome you to the merchandising team newsletter. Keep abreast of all North America eCommerce updates and changes on-glass</p>            
 		  <table id="table example" class="table table-striped">
@@ -22,19 +35,19 @@
 		      </tr>
 		    </thead>
 		    <tbody>
-		    {% for Sku in Skus %}
+		    {% for skus in sku %}
 		      <tr>
-		        <td> {{ Sku.live_date }} </td>
-		        <td> {{ Sku.Sku_Article }}</a></td>
-		        <td> <a href="{% url 'sku_detail' pk=Sku.pk %}">{{ Sku.Sku_Num }}</a></td>
-		        <td> {{ Sku.Friendly_Name }}</a></td>
+		        <td> {{ sku.live_date }} </td>
+		        <td> {{ site.Sku_Article }}</a></td>
+		        
+		        <td> {{ site.Friendly_Name }}</a></td>
 		        <td> <a href="{{ Sku.SKU_Link }}">{{ Sku.SKU_Link }}</a></td>
-		        <td> {{ Sku.os_choice }} </td>
-		        <td> {{ Sku.processor_choice }} </td>
-		        <td> {{ Sku.memory_choice }}GB </td>
-		        <td> {{ Sku.hd_choice }}GB </td>
-		        <td> {{ Sku.ss_choice }} </td>
-		        <td> {{ Sku.Price_Choice }} </td>
+		        <td> {{ site.os_choice }} </td>
+		        <td> {{ site.processor_choice }} </td>
+		        <td> {{ site.memory_choice }}GB </td>
+		        <td> {{ site.hd_choice }}GB </td>
+		        <td> {{ site.ss_choice }} </td>
+		        <td> {{ site.Price_Choice }} </td>
 		      </tr>
 		     {% endfor %}
 		    </tbody>

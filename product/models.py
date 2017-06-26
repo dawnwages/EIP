@@ -125,6 +125,9 @@ class Brand(models.Model):
     def __str__(self):
         return self.title
 
+class Tag(models.Model):
+	name = models.CharField(max_length=200)
+
 class article(models.Model):
 		author = models.ForeignKey('auth.User')
 		ArticleList_ID = models.AutoField(primary_key=True)
@@ -143,7 +146,7 @@ class article(models.Model):
 			default= CON,
 			)
 		#Brand
-		Brand_Type = models.ForeignKey('product.brand')
+		Brand_Type = models.ForeignKey('product.Brand')
 		#Device Type
 		Live = 'Live'
 		CS = 'Coming Soon'
@@ -182,6 +185,7 @@ class article(models.Model):
 			choices=Device_Type,
 			default= LT,
 			)
+		Tags = models.ManyToManyField(Tag)
 		TaskLink = models.TextField(blank=True)
 		HLink = models.TextField()
 		AssetLinks = models.TextField(blank=True)
