@@ -2,9 +2,10 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.utils import timezone
+#Make sure all of the models in models.py that you want included in your administrative site are included in admin.py
 
 # Create your models here.
-class processor(models.Model):
+class Processor(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
     created_date = models.DateTimeField(
@@ -19,7 +20,7 @@ class processor(models.Model):
     def __str__(self):
         return self.title
 
-class os(models.Model):
+class Os(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
     created_date = models.DateTimeField(
@@ -34,7 +35,7 @@ class os(models.Model):
     def __str__(self):
         return self.title
 
-class memory(models.Model):
+class Memory(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
     created_date = models.DateTimeField(
@@ -50,7 +51,7 @@ class memory(models.Model):
         return self.title
 
 
-class hd(models.Model):
+class Hd(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
     created_date = models.DateTimeField(
@@ -65,7 +66,7 @@ class hd(models.Model):
     def __str__(self):
         return self.title
 
-class display(models.Model):
+class Display(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
     created_date = models.DateTimeField(
@@ -80,7 +81,7 @@ class display(models.Model):
     def __str__(self):
         return self.title
 
-class ss(models.Model):
+class Ss(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
     created_date = models.DateTimeField(
@@ -95,7 +96,7 @@ class ss(models.Model):
     def __str__(self):
         return self.title
 
-class color(models.Model):
+class Color(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
     created_date = models.DateTimeField(
@@ -128,8 +129,13 @@ class Brand(models.Model):
 class Tag(models.Model):
 	name = models.CharField(max_length=200)
 
+<<<<<<< HEAD
 class article(models.Model):
 		author = models.ForeignKey('auth.User')
+=======
+class Article(models.Model):
+		Author = models.ForeignKey('auth.User')
+>>>>>>> Finally freaking fixed the models and Foreign Key and template tag reltionship on sku_list.html
 		ArticleList_ID = models.AutoField(primary_key=True)
 		Article_Num = models.CharField(max_length=20,)
 		Series_Name = models.CharField(max_length=200)
@@ -185,7 +191,11 @@ class article(models.Model):
 			choices=Device_Type,
 			default= LT,
 			)
+<<<<<<< HEAD
 		Tags = models.ManyToManyField(Tag)
+=======
+		Tags = models.ManyToManyField('product.Tag')
+>>>>>>> Finally freaking fixed the models and Foreign Key and template tag reltionship on sku_list.html
 		TaskLink = models.TextField(blank=True)
 		HLink = models.TextField()
 		AssetLinks = models.TextField(blank=True)
@@ -205,10 +215,10 @@ class article(models.Model):
 		def __str__(self):
 			return self.Article_Num
 
-class sku(models.Model):
+class Sku(models.Model):
 		author = models.ForeignKey('auth.User')
 		Sku_Num = models.CharField(max_length=20)
-		Sku_Article = models.ForeignKey('product.article')
+		article = models.ForeignKey('product.Article')
 		Friendly_Name = models.CharField(max_length=200)
 		#Country
 		US = 'United States'
@@ -251,13 +261,13 @@ class sku(models.Model):
 			default= MTM,
 			)
 		SKU_Link = models.TextField(default='NULL')
-		processor_choice = models.ForeignKey('product.processor', default='NULL',)
-		os_choice = models.ForeignKey('product.os', default='NULL',)
-		memory_choice = models.ForeignKey('product.memory', default='NULL')
-		hd_choice = models.ForeignKey('product.hd', default='NULL')
-		display_choice = models.ForeignKey('product.display', default='NULL')
-		ss_choice = models.ForeignKey('product.ss', default='NULL')
-		color_choice = models.ForeignKey('product.color', default='NULL')
+		processor_choice = models.ForeignKey('product.processor')
+		os_choice = models.ForeignKey('product.os')
+		memory_choice = models.ForeignKey('product.memory')
+		hd_choice = models.ForeignKey('product.hd')
+		display_choice = models.ForeignKey('product.display')
+		ss_choice = models.ForeignKey('product.ss')
+		color_choice = models.ForeignKey('product.color')
 		TierOne = '1'
 		TierTwo = '2'
 		TierThree = '3'

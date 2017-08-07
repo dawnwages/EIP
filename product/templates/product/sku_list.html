@@ -5,7 +5,11 @@
         <div class="container">
 
         	{% for x in portfolio %}
+<<<<<<< HEAD
         		<p>{{ x.live_date }}    {{ x.Article_Num }}    {{ x.Sku_Num }} {{ x.Sku_Num }}<p> 
+=======
+        		<p>{{ x.live_date }}    {{ x.article }}    {{ x.Sku_Num }} {{ x.article.Series_Name }} <p> 
+>>>>>>> Finally freaking fixed the models and Foreign Key and template tag reltionship on sku_list.html
         	{% endfor %}
 
         	{% for site in sites %}
@@ -21,20 +25,15 @@
 		  <table id="table example" class="table table-striped">
 		    <thead>
 		      <tr>
-		        <th>Date</th>
 		        <th>Article Number</th>
 		        <th>SKU</th>
 		        <th>Friendly Name</th>
-		        <th>Hybris Link</th>
-		        <th>Operating System</th>
-		        <th>Processor</th>
-		        <th>Memory</th>
-		        <th>Hard Drive</th>
-		        <th>Screen Size</th>
-		        <th>Price Range</th>
+		        <th>SKU Hybris Link</th>
+
 		      </tr>
 		    </thead>
 		    <tbody>
+<<<<<<< HEAD
 		    {% for skus in sku %}
 		      <tr>
 		        <td> {{ sku.live_date }} </td>
@@ -43,6 +42,15 @@
 		        <td> {{ site.Friendly_Name }}</a></td>
 		        <td> <a href="{{ Sku.SKU_Link }}">{{ Sku.SKU_Link }}</a></td>
 		        <td> {{ site.os_choice }} </td>
+=======
+		    {% for mtm in total_list %}
+		      <tr>
+		        <td> {{ mtm.Article_Num.Friendly_Name }}</a></td>
+		        
+		        <td> {{ mtm.sku.Friendly_Name }}</a></td>
+		        <td> <a href="{{ sku.SKU_Link }}">{{ Sku.SKU_Link }}</a></td>
+		        <td> {{ mtm.os_choice }} </td>
+>>>>>>> Finally freaking fixed the models and Foreign Key and template tag reltionship on sku_list.html
 		        <td> {{ site.processor_choice }} </td>
 		        <td> {{ site.memory_choice }}GB </td>
 		        <td> {{ site.hd_choice }}GB </td>
