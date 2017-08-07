@@ -129,13 +129,9 @@ class Brand(models.Model):
 class Tag(models.Model):
 	name = models.CharField(max_length=200)
 
-<<<<<<< HEAD
-class article(models.Model):
-		author = models.ForeignKey('auth.User')
-=======
+
 class Article(models.Model):
 		Author = models.ForeignKey('auth.User')
->>>>>>> Finally freaking fixed the models and Foreign Key and template tag reltionship on sku_list.html
 		ArticleList_ID = models.AutoField(primary_key=True)
 		Article_Num = models.CharField(max_length=20,)
 		Series_Name = models.CharField(max_length=200)
@@ -191,11 +187,7 @@ class Article(models.Model):
 			choices=Device_Type,
 			default= LT,
 			)
-<<<<<<< HEAD
-		Tags = models.ManyToManyField(Tag)
-=======
 		Tags = models.ManyToManyField('product.Tag')
->>>>>>> Finally freaking fixed the models and Foreign Key and template tag reltionship on sku_list.html
 		TaskLink = models.TextField(blank=True)
 		HLink = models.TextField()
 		AssetLinks = models.TextField(blank=True)

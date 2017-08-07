@@ -4,58 +4,35 @@
 	
         <div class="container">
 
-        	{% for x in portfolio %}
-<<<<<<< HEAD
-        		<p>{{ x.live_date }}    {{ x.Article_Num }}    {{ x.Sku_Num }} {{ x.Sku_Num }}<p> 
-=======
-        		<p>{{ x.live_date }}    {{ x.article }}    {{ x.Sku_Num }} {{ x.article.Series_Name }} <p> 
->>>>>>> Finally freaking fixed the models and Foreign Key and template tag reltionship on sku_list.html
-        	{% endfor %}
-
-        	{% for site in sites %}
-        		<p>{{ site.live_date }}    {{ site.Article_Num }}    {{ site.Sku_Num }} {{ sku.Sku_Num }}<p> 
-        	{% endfor %}
-
-        	{% for sku in object_list %}
-			<li>{{sku.Sku_Num}} {{ sku.live_date }} {{ site.Article_Num }} </li>
-			{% endfor %}
-
 		  <h2>Onsite SKUS</h2>
 		  <p>We welcome you to the merchandising team newsletter. Keep abreast of all North America eCommerce updates and changes on-glass</p>            
 		  <table id="table example" class="table table-striped">
 		    <thead>
 		      <tr>
+		        <th>Live Date</th>
+		        <th>SKU Name</th>
+		        <th>Series Name</th>
+		        <th>Part Number</th>
 		        <th>Article Number</th>
-		        <th>SKU</th>
-		        <th>Friendly Name</th>
-		        <th>SKU Hybris Link</th>
+		        <th>Hard Drive</th>
+		        <th>
+		        <th>Screen Size</th>
+		        <th>Price Tier</th>
 
 		      </tr>
 		    </thead>
 		    <tbody>
-<<<<<<< HEAD
-		    {% for skus in sku %}
+
+		    {% for x in portfolio %}
 		      <tr>
-		        <td> {{ sku.live_date }} </td>
-		        <td> {{ site.Sku_Article }}</a></td>
-		        
-		        <td> {{ site.Friendly_Name }}</a></td>
-		        <td> <a href="{{ Sku.SKU_Link }}">{{ Sku.SKU_Link }}</a></td>
-		        <td> {{ site.os_choice }} </td>
-=======
-		    {% for mtm in total_list %}
-		      <tr>
-		        <td> {{ mtm.Article_Num.Friendly_Name }}</a></td>
-		        
-		        <td> {{ mtm.sku.Friendly_Name }}</a></td>
-		        <td> <a href="{{ sku.SKU_Link }}">{{ Sku.SKU_Link }}</a></td>
-		        <td> {{ mtm.os_choice }} </td>
->>>>>>> Finally freaking fixed the models and Foreign Key and template tag reltionship on sku_list.html
-		        <td> {{ site.processor_choice }} </td>
-		        <td> {{ site.memory_choice }}GB </td>
-		        <td> {{ site.hd_choice }}GB </td>
-		        <td> {{ site.ss_choice }} </td>
-		        <td> {{ site.Price_Choice }} </td>
+		        <td> {{ x.live_date }}</a></td>
+		        <td> {{ x.Friendly_Name }}</a></td>
+		        <td> {{ x.article.Series_Name }} </td>
+		        <td> <a href="http://www3.lenovo.com/us/en/p/{{ x.SKU_Num }}">{{ x.Sku_Num }}</a></td>
+		        <td> {{ x.article }} </td>
+		        <td> {{ x.hd_choice }}GB </td>
+		        <td> {{ x.ss_choice }} </td>
+		        <td> {{ x.Price_Choice }} </td>
 		      </tr>
 		     {% endfor %}
 		    </tbody>
