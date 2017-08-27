@@ -15,24 +15,24 @@
 		        <th>Part Number</th>
 		        <th>Article Number</th>
 		        <th>Hard Drive</th>
-		        <th>
 		        <th>Screen Size</th>
 		        <th>Price Tier</th>
+		        <th>Brand</th>
 
 		      </tr>
 		    </thead>
 		    <tbody>
 
-		    {% for x in portfolio %}
+		    {% for list in portfolio %}
 		      <tr>
-		        <td> {{ x.live_date }}</a></td>
-		        <td> {{ x.Friendly_Name }}</a></td>
-		        <td> {{ x.article.Series_Name }} </td>
-		        <td> <a href="http://www3.lenovo.com/us/en/p/{{ x.SKU_Num }}">{{ x.Sku_Num }}</a></td>
-		        <td> {{ x.article }} </td>
-		        <td> {{ x.hd_choice }}GB </td>
-		        <td> {{ x.ss_choice }} </td>
-		        <td> {{ x.Price_Choice }} </td>
+		        <td> {{ list.live_date }}</td>
+		        <td> {{ list.Friendly_Name }}</a></td>
+		        <td> {{ list.article.Series_Name }} </td>
+		        <td> <a href="http://www3.lenovo.com/us/en/p/{{ list.SKU_Num }}">{{ list.Sku_Num }}</a></td>
+		        <td> {{ list.article }} </td>
+		        <td> {{ list.hd_choice }}GB </td>
+		        <td> {{ list.ss_choice }} </td>
+		        <td> {{ list.article.Brand_Type }} </td>
 		      </tr>
 		     {% endfor %}
 		    </tbody>
