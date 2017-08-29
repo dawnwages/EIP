@@ -1,0 +1,60 @@
+{% extends 'CMS/base.html' %}
+
+{% block content %}
+        <div class="container">
+
+        {% for x in links %}
+        {{ x.title }}
+
+        {% endfor %}
+
+          <h2>Master Calendar</h2>
+          <p>All of the most important links</p>
+        <iframe src="https://cowork.us.extranet.lenovo.com/departments/nalenovodotcom/SitePages/Home.aspx" style="width:110%; height:700px;">
+            <p>Your browser does not support iframes.</p>
+        </iframe> 
+
+
+          <h2>Homepage Calendar</h2>
+          <p>All of the most important links</p>
+        <iframe src="https://app.teamweek.com/#pg/ktkpgt9a1ibdooer9swn" style="width:110%; height:700px;">
+            <p>Your browser does not support iframes.</p>
+        </iframe> 
+
+          <h2>Calendar Updates</h2>
+          <p>All of the most important links</p>
+
+          <table id="myTable" class="table table-striped">
+            <thead>
+              <tr class="header">
+                <th>Live Date</th>
+                <th>SKU Name</th>
+                <th>Series Name</th>
+                <th>Part Number</th>
+                <th>Article Number</th>
+                <th>Hard Drive</th>
+                <th>Screen Size</th>
+                <th>Price Tier</th>
+                <th>Brand</th>
+
+              </tr>
+            </thead>
+            <tbody>
+
+            {% for list in portfolio %}
+              <tr>
+                <td> {{ list.article.Series_Name }} </td>
+                <td> {{ list.live_date }}</td>
+                <td> {{ list.Friendly_Name }}</a></td>
+                <td> <a href="http://www3.lenovo.com/us/en/p/{{ list.SKU_Num }}">{{ list.Sku_Num }}</a></td>
+                <td> {{ list.article }} </td>
+                <td> {{ list.hd_choice }}GB </td>
+                <td> {{ list.ss_choice }} </td>
+                <td> {{ list.article.Brand_Type }} </td>
+              </tr>
+             {% endfor %}
+            </tbody>
+          </table>
+
+        </div>
+{% endblock %}

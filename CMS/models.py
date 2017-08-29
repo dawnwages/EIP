@@ -9,7 +9,7 @@ class Post(models.Model):
 		author = models.ForeignKey('auth.User')
 		title = models.CharField(max_length=200)
 		email = models.CharField(max_length=200)
-		url = models.CharField(max_length=255, blank=True) #RFC 3986 states there is no limit, but the hostname is limited to 255 characters because of DNS limitations.
+		url = models.URLField(max_length=255, blank=True) #RFC 3986 states there is no limit, but the hostname is limited to 255 characters because of DNS limitations.
 		Update_1 = '/static/img/update_1.jpg'
 		Update_2 = '/static/img/update_2.jpg'
 		Update_3 = '/static/img/update_3.jpg'
@@ -41,3 +41,40 @@ class Post(models.Model):
 		def __str__(self):
 			return self.title
 
+
+class Link(models.Model):
+	author = models.ForeignKey('auth.User')
+	title = models.CharField(max_length=200)
+	url = models.URLField(max_length=200)
+	description = models.CharField(max_length=2000)
+	link_1 = '/static/icon/icons8-Filing Cabinet-50.png'
+	link_2 = '/static/icon/icons8-Support Filled-50.png'
+	link_3 = '/static/icon/icons8-Binoculars Filled-50.png'
+	link_4 = '/static/icon/icons8-Whois-50.png'
+	link_5 = '/static/icon/icons8-Key Filled-50.png'
+	link_types = (
+		(link_1, 'Internal Ops'),
+		(link_2, 'Tools'),
+		(link_3, 'Info Resource'),
+		(link_4, 'Lenovo link'),
+		(link_5, 'Calendar')
+		)
+	link_choices = models.CharField(
+		max_length=200,
+		choices=link_types,
+		default=link_2,
+		)
+
+	created_date = models.DateTimeField(
+		default=timezone.now)
+	
+	published_date = models.DateTimeField(
+		blank=True, null=True)
+
+	def publish(self):
+		self.published_date = timezone.now()
+		self.save()
+
+
+	def __str__(self):
+		return self.title

@@ -1,0 +1,40 @@
+{% extends 'CMS/base.html' %}
+
+{% block content %}
+        <div class="container">
+
+        {% for x in links %}
+        {{ x.title }}
+
+        {% endfor %}
+
+          <h2>Important Links</h2>
+          <p>All of the most important links</p>
+          <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+          <table id="myTable" class="table table-striped">
+            <thead>
+              <tr class="header">
+                <th></th>
+                <th>Link</th>
+                <th>Description</th>
+                <th>Published</th>
+              </tr>
+            </thead>
+            <tbody>
+
+            {% for list in links %}
+              <tr>
+                <td> <img src="{{ list.link_choices }}" style="max-width:20px"> </td>
+                <td> <a href="{{ list.url }}"" target="_blank">{{ list.title }}</a></td>
+                <td> {{ list.description }} </td>
+                <td> {{ list.published_date }} </td>
+              </tr>
+             {% endfor %}
+
+
+
+            </tbody>
+          </table>
+        </div>
+{% endblock %}
