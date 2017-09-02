@@ -3,14 +3,8 @@
 {% block content %}
         <div class="container">
 
-        {% for x in links %}
-        {{ x.title }}
-
-        {% endfor %}
-
           <h2>Important Links</h2>
           <p>All of the most important links</p>
-          <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
 
           <table id="myTable" class="table table-striped">
             <thead>
@@ -36,5 +30,5 @@
 
             </tbody>
           </table>
-        </div>
+
 {% endblock %}
