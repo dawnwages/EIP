@@ -9,7 +9,7 @@
             <form action="." method="POST" class="padding">
 
             {% csrf_token %} 
-{{ user.username }}
+{{  user.username }}
             {{ noodle_form.as_p }}
             <div class="divider"></div>
             {{ formset.management_form }}

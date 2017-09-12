@@ -1,0 +1,297 @@
+html,
+body {
+    height: 100%;
+    background: #f2f2f2;
+    font-family: 'News Cycle', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.name {
+    padding-top: 170px;
+    line-height: 50%;
+}
+
+.name h1{
+    font-family: 'Permanent Marker', cursive;
+    line-height: 40%;
+    float: right;
+    padding-right: 150px;
+    font-size: 75px;
+    text-shadow: 2px 2px #9c9ea3;
+}
+
+.cats h1{
+    font-family: 'Permanent Marker', cursive;
+    vertical-align: bottom;
+    float: left;
+    padding-right: 0px;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.name p{
+    font-family: 'News Cycle', sans-serif;
+    line-height: 250%;
+    float: right;
+    padding-right: 180px;
+}
+
+.jumbotron {
+
+    font-size: 12px;
+    background-color: #FFF;
+    width: 100%;
+    text-align: left;
+}
+
+.jumbotron p, ul, h1, h2, h3{
+    padding-left: 20px;
+    font-family: 'News Cycle', sans-serif;
+    font-size: 15px;
+    padding right: 100px;
+}
+
+.jumbotron img{
+    height: 450px;
+    width: auto;
+    float: right;
+    margin-top: -110px;
+    z-index: +100;
+}
+/* Controls
+---------------------------------------------------------------------- */
+.top{
+    position:fixed;
+    width: 100%;
+}
+
+.controls {
+    padding: 1.5rem;
+    background: #333;
+    font-size: .1px;
+}
+
+.contact li {
+    padding: 1.5rem;
+    background: #333;
+    float: right;
+    list-style: none;
+    text-align: center;
+    color: #ffffff;
+}
+
+.contact img {
+    margin-top:-100px;
+    width:50px;
+    height:auto;
+}
+
+.controls h1 {
+
+}
+
+.controls .name p {
+    font-family: 'News Cycle', sans-serif;
+}
+
+.cool h3{
+    font-family: 'News Cycle', sans-serif;
+}
+
+.control {
+    position: relative;
+    display: inline-block;
+    width: 5rem;
+    height: 2.7rem;
+    background: #444;
+    cursor: pointer;
+    color: white;
+    transition: background 150ms;
+}
+
+.control {
+    font-size: 10px;
+    padding-top: 50px;
+}
+
+.control:hover {
+    background: #3f3f3f;
+}
+
+.control[data-filter]:after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: calc(50% - 6px);
+    left: calc(50% - 6px);
+    border: 2px solid currentColor;
+    border-radius: 2px;
+    background: currentColor;
+    transition: background-color 150ms, border-color 150ms;
+}
+
+.control[data-sort]:after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid;
+    border-left: 2px solid;
+    top: calc(50% - 6px);
+    left: calc(50% - 6px);
+    transform:  translateY(1px) rotate(45deg);
+}
+
+.control[data-sort*=":desc"]:after {
+    transform:  translateY(-4px) rotate(-135deg);
+}
+
+.mixitup-control-active {
+    background: #393939;
+}
+
+.mixitup-control-active[data-filter]:after {
+    background: transparent;
+}
+
+.control:first-of-type {
+    border-radius: 3px 0 0 3px;
+}
+
+.control:last-of-type {
+    border-radius: 0 3px 3px 0;
+}
+
+.control[data-filter] + .control[data-sort] {
+    margin-left: .75rem;
+}
+
+.control[data-filter=".green"] {
+    color: #0388a9;
+}
+
+.control[data-filter=".blue"] {
+    color: #ffd200;
+}
+
+.control[data-filter=".pink"] {
+    color: #b5bbec;
+}
+
+.control[data-filter="none"] {
+    color: #2f2f2f;
+}
+
+/* Container
+---------------------------------------------------------------------- */
+
+.container {
+    padding-top: 10rem;
+    width: 100%;
+    z-index: -100;
+    position: relative;
+}
+
+.container h1{
+    padding: 1rem;
+    text-align: left;
+    font-size: 20px;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.container .date p{
+    font-weight: bold;
+}
+
+.container p{
+    padding: 1rem;
+    text-align: justify;
+    font-family: 'News Cycle', sans-serif;
+    font-size: 12px;
+    color: #000;
+}
+
+.container:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+/* Target Elements
+---------------------------------------------------------------------- */
+
+.mix,
+.gap {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.mix {
+    background: #fff;
+    border-top: .5rem solid currentColor;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.mix:before {
+    content: '';
+    display: inline-block;
+    padding-top: 2px;
+}
+
+.mix.green {
+    color: #0388a9;
+}
+
+.mix.pink {
+    color: #b5bbec;
+}
+
+.mix.blue {
+    color: #ffd200;
+}
+
+/* Grid Breakpoints
+---------------------------------------------------------------------- */
+
+/* 2 Columns */
+
+.mix,
+.gap {
+    width: calc(100%/2 - (((2 - 1) * 1rem) / 2));
+}
+
+/* 3 Columns */
+
+@media screen and (min-width: 541px) {
+    .mix,
+    .gap {
+        width: calc(100%/3 - (((3 - 1) * 1rem) / 3));
+    }
+}
+
+/* 4 Columns */
+
+@media screen and (min-width: 961px) {
+    .mix,
+    .gap {
+        width: calc(100%/4 - (((4 - 1) * 1rem) / 4));
+    }
+}
+
+/* 5 Columns */
+
+@media screen and (min-width: 1281px) {
+    .mix,
+    .gap {
+        width: calc(100%/5 - (((5 - 1) * 1rem) / 5));
+    }
+}
+

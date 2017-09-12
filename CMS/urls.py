@@ -9,7 +9,7 @@ from django.conf.urls.static import static
 urlpatterns =[
 	# url(r'^admin/', admin.site.urls),
 	url(r'^product/', include('product.urls', namespace='product')),
-	url(r'^profiles/', include('profiles.urls', namespace='profiles')),
+	url(r'^accounts/', include('profiles.urls', namespace='profiles')),
 
 
 	url(r'^login/$', auth_views.login, name='login'),

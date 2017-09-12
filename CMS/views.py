@@ -3,7 +3,8 @@ from __future__ import unicode_literals
 
 from django.contrib.auth.models import User
 
-from django.shortcuts import (render, get_object_or_404)
+
+from django.shortcuts import (render, get_object_or_404, redirect)
 from django.conf import settings
 from django.utils import timezone
 #from django.CMS.files.storage import FileSystemStorage
@@ -39,8 +40,11 @@ def post_new(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.published_date = timezone.now()
             form.save()
-            return redirect('home')
+            return redirect('post_list')
     else:
         form = PostForm()
     return render(request, 'CMS/post_edit.html', {
