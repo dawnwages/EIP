@@ -1,0 +1,154 @@
+{% load staticfiles %}
+
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Master Merchandiser</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	</head>
+<body>
+<?php include_once("analyticstracking.php") ?>
+			<section>
+				<div class="container-fluid">
+					<div class="jumbotron">
+						<div class="row">
+								<div class="col-md-3 center">
+									<a href="/" title="Go Home Roger!">Home</a>
+								</div>
+								<div class="col-md-3 center">
+									<a href="/links/" title="Too many links to count! Here is a list of all the important ecommerce links!">Links</a>
+								</div>
+								<div class="col-md-3 center">
+									<a href="/product/sku_list/" title="SKU Level Products">Products by Model</a>
+								</div>
+								<div class="col-md-3 center">
+									<a href="/product/article_list/" title= "Updates for All Products - organized by Consumer, Commercial or all prouducts">Product Notes</a>
+								</div>
+								<div class="col-md-3 center">
+									<a href="/calendar/" title= "Merchandising Calendar">Calendar</a>
+								</div>
+								<div class="col-md-3 center">
+									<a href="#" title= "Repository for all Merchandising content">Merch Repo</a>
+								</div>
+								<div class="col-md-3 center">
+									<a href="#" title= "Found a bug? Help us out!">Submit a Bug</a>
+								</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Banner -->
+		<section id="banner">
+			 <div class="container-fluid">
+				          <img src="/static/img/LenovoLogo.png" style="width:150px">
+				          <br>
+				          <br>   
+			</div>		
+		</section>
+
+	{% block content %}
+
+	{% endblock %}
+
+
+
+
+
+
+
+
+
+
+  			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="copyright">
+					&copy; Created and Maintained by NA Merchandising Team
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="static/js/jquery.min.js"></script>
+			<script src="static/js/skel.min.js"></script>
+			<script src="static/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="static/js/main.js"></script>
+			
+		<!-- Google Analytics Tracking -->
+			<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-101662275-1', 'auto');
+			ga('send', 'pageview');
+
+			</script>
+</body>
+
+
+</html>

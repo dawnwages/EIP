@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% extends 'CMS/base.html' %}
 
 <!--
 To change this template, choose Tools | Templates
@@ -6,203 +6,281 @@ and open the template in the editor.
 -->
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Master Merchandiser</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="static/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+<title>Merchandising Master</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+</style>
+<body class="w3-light-grey w3-content" style="max-width:1600px">
 
-		    <!-- Bootstrap -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px">
 
-
-	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	    <!--Post scroll dwnld -->
-	    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
-
-		<!-- native scripts -->
-		<script type="text/javascript" src="/static/js/default.js"></script>
-		<script type="text/javascript" src="/static/js/bootstrap.js"></script>
-		<script type="text/javascript" src="/static/css/bootstrap.css"></script>
-
-
-		<!-- Google Webfonts -->
-		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-
-		<!-- Theme Style -->
-		<link rel="stylesheet" href="/static/css/style.css">
-		<link rel="stylesheet" href="/static/css/lenovo.css">
-		<!-- Menu Icon Style -->
-		<link rel="stylesheet" href="/static/css/icomoon.css">
-
-		<!-- Menu JS -->
-		<script type="text/javascript" src="/static/default.js"></script>
-
-	</head>
-<body>
-<?php include_once("analyticstracking.php") ?>
-			<section>
-			<div class="container-fluid">
-			<div class="jumbotron">
-			<div class="row">
-			<div class="col-md-3 center">
-<a href="/" title="Go Home Roger!">Home</a>
-			</div>
-			<div class="col-md-3 center">
-<a href="/links/" title="Too many links to count! Here is a list of all the important ecommerce links!">Links</a>
-			</div>
-			<div class="col-md-3 center">
-<a href="/product/sku_list/" title="SKU Level Products">Products by Model</a>
-			</div>
-			<div class="col-md-3 center">
-<a href="/product/article_list/" title= "Updates for All Products - organized by Consumer, Commercial or all prouducts">Product Notes</a>
-			</div>
-			<div class="col-md-3 center">
-<a href="/calendar/" title= "Merchandising Calendar">Calendar</a>
-			</div>
-			<div class="col-md-3 center">
-<a href="#" title= "Repository for all Merchandising content">Merch Repo</a>
-			</div>
-			<div class="col-md-3 center">
-<a href="#" title= "Found a bug? Help us out!">Submit a Bug</a>
-			</div>
-			</div>
-			</div>
-			</div>
-			</section>
-
-		<!-- Banner -->
-			<section id="banner">
-
-			  <div class="container-fluid">
-				          <img src="/static/img/LenovoLogo.png" style="width:150px">
-				          <br>
-				          <br>   
-			</div>
-   			
+  <!-- Header -->
+  <header id="portfolio">
+    <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+    <div class="w3-container">
+    <h1><b>My Portfolio</b></h1>
+    <div class="w3-section w3-bottombar w3-padding-16">
+      <span class="w3-margin-right">Filter:</span> 
+      <button class="w3-button w3-black">ALL</button>
+      <button class="w3-button w3-white"><i class="fa fa-diamond w3-margin-right"></i>Design</button>
+      <button class="w3-button w3-white w3-hide-small"><i class="fa fa-photo w3-margin-right"></i>Photos</button>
+      <button class="w3-button w3-white w3-hide-small"><i class="fa fa-map-pin w3-margin-right"></i>Art</button>
+    </div>
+    </div>
+  </header>
+  
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="/w3images/mountains.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="/w3images/lights.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container">
+      <img src="/w3images/nature.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
   </div>
-				<h2><strong>Merchandising Master</strong> is a source for all of your most pressing North American Merchandising News</h2>
-				<p>Brought to you by the Merch Team</p>
-				<ul class="actions">
-					<li><button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Meet The Team</button></li>
-				</ul>
+  
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="/w3images/p1.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="/w3images/p2.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container">
+      <img src="/w3images/p3.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+  </div>
 
-						<div id="demo" class="collapse">
-			  			<br>
-			  				<p>North American eCommerce - The best in the West.</p>
-							<div class="row">
-								<div class="col-md-3">
-									<a href="mailto:webmaster@example.com" data-toggle="tooltip" title="Hooray"><img src="/static/img/piper_landrum.jpg" class="img-circle person" alt="Piper Landrum" style="width:150px"></a>
-									<br><h4>Piper Landrum</h4> 
-									<br><p><em>Sr. Manager, Web Merchandising</em></p><br>
-								</div>
-								<div class="col-md-3">
-									<a href="#" data-toggle="tooltip" title="Hooray"><img src="/static/img/clarissa_araujo.jpg" class="img-circle person" alt="Clarissa Araujo" style="width:150px"></a>
-									<br><h4>Clarissa Araujo</h4> 
-									<br><p><em>SS&P & Outlet Merchandising Manager</em></p><br>
-								</div>
-								<div class="col-md-3">
-									<img src="/static/img/nikki_dickens.jpg" class="img-circle person" alt="Nikki Dickens" style="width:150px">
-									<br><h4>Nikki Dickens</h4> 
-									<br><p><em>NA Web Merchandising Project Manager</em></p><br>
-								</div>
-								<div class="col-md-3">
-									<img src="/static/img/jamie_kokiw.jpg" class="img-circle person" alt="Jamie Kokiw" style="width:150px">
-									<br><h4>Jamie Kokiw</h4> 
-									<br><p><em>Site & Optimization Merchandising Manager</em></p><br>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-3">
-									<img src="/static/img/anita_sivakumar.jpg" class="img-circle person" alt="Anita Sivakumar" style="width:150px">
-									<br><h4>Anita Sivakumar</h4> 
-									<br><p><em>Creative Lead and Merchandising Manager</em></p><br>
-								</div>
-								<div class="col-md-3">
-									<a href="mailto:webmaster@example.com" data-toggle="tooltip" title="Hooray"><img src="/static/img/susan_lowerre.jpg" class="img-circle person" alt="Susan Lowerre" style="width:150px"></a>
-									<br><h4>Susan Lowerre</h4> 
-									<br><p><em>Campaigns and UX Web Merchandising Manager</em></p><br>
-								</div>
-								<div class="col-md-3">
-									<a href="#" data-toggle="tooltip" title="Hooray"><img src="/static/img/Dawn_Wages.jpg" class="img-circle person" alt="Dawn Wages" style="width:150px"></a>
-									<br><h4>Dawn Wages</h4> 
-									<br><p><em>Consumer Product Merchandising Manager</em></p><br>
-								</div>
-								<div class="col-md-3">
-									<img src="/static/img/kim_lorenz.jpg" class="img-circle person" alt="Kim Lorenz" style="width:150px">
-									<br><h4>Kim Lorenz</h4> 
-									<br><p><em>Commercial Product Merchandising Manager</em></p><br>
-								</div>
-							</div>				
-					</div>		
-			</section>
-		<!-- Two -->
+  <!-- Pagination -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+    </div>
+  </div>
 
-<div class="col-md-10 text-right">
-	<!-- FORMS -->
-	<br>
-	<br>
-	{% if user.is_authenticated %}
-	<a href="{% url 'post_new' %}" class="top-menu" data-toggle"tooltip" title="Click to add new post"><span class="glyphicon glyphicon-plus"></span></a>
-	<a href="{% url 'post_new' %}" class="top-menu" data-toggle"tooltip" title="Click to add new post"><h4>New Merch News?</h4></a>
-	{% endif %}
-		
+  <!-- Images of Me -->
+  <div class="w3-row-padding w3-padding-16" id="about">
+    <div class="w3-col m6">
+      <img src="/w3images/avatar_g.jpg" alt="Me" style="width:100%">
+    </div>
+    <div class="w3-col m6">
+      <img src="/w3images/me2.jpg" alt="Me" style="width:100%">
+    </div>
+  </div>
+
+  <div class="w3-container w3-padding-large" style="margin-bottom:32px">
+    <h4><b>About Me</b></h4>
+    <p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest of lorem ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+    <hr>
+    
+    <h4>Technical Skills</h4>
+    <!-- Progress bars / Skills -->
+    <p>Photography</p>
+    <div class="w3-grey">
+      <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:95%">95%</div>
+    </div>
+    <p>Web Design</p>
+    <div class="w3-grey">
+      <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:85%">85%</div>
+    </div>
+    <p>Photoshop</p>
+    <div class="w3-grey">
+      <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:80%">80%</div>
+    </div>
+    <p>
+      <button class="w3-button w3-dark-grey w3-padding-large w3-margin-top w3-margin-bottom">
+        <i class="fa fa-download w3-margin-right"></i>Download Resume
+      </button>
+    </p>
+    <hr>
+    
+    <h4>How much I charge</h4>
+    <!-- Pricing Tables -->
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-black w3-xlarge w3-padding-32">Basic</li>
+          <li class="w3-padding-16">Web Design</li>
+          <li class="w3-padding-16">Photography</li>
+          <li class="w3-padding-16">1GB Storage</li>
+          <li class="w3-padding-16">Mail Support</li>
+          <li class="w3-padding-16">
+            <h2>$ 10</h2>
+            <span class="w3-opacity">per month</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-teal w3-padding-large w3-hover-black">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-teal w3-xlarge w3-padding-32">Pro</li>
+          <li class="w3-padding-16">Web Design</li>
+          <li class="w3-padding-16">Photography</li>
+          <li class="w3-padding-16">50GB Storage</li>
+          <li class="w3-padding-16">Endless Support</li>
+          <li class="w3-padding-16">
+            <h2>$ 25</h2>
+            <span class="w3-opacity">per month</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-teal w3-padding-large w3-hover-black">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="w3-third">
+        <ul class="w3-ul w3-border w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-black w3-xlarge w3-padding-32">Premium</li>
+          <li class="w3-padding-16">Web Design</li>
+          <li class="w3-padding-16">Photography</li>
+          <li class="w3-padding-16">Unlimited Storage</li>
+          <li class="w3-padding-16">Endless Support</li>
+          <li class="w3-padding-16">
+            <h2>$ 25</h2>
+            <span class="w3-opacity">per month</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-teal w3-padding-large w3-hover-black">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-large w3-grey">
+    <h4 id="contact"><b>Contact Me</b></h4>
+    <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
+      <div class="w3-third w3-dark-grey">
+        <p><i class="fa fa-envelope w3-xxlarge w3-text-light-grey"></i></p>
+        <p>email@email.com</p>
+      </div>
+      <div class="w3-third w3-teal">
+        <p><i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i></p>
+        <p>Chicago, US</p>
+      </div>
+      <div class="w3-third w3-dark-grey">
+        <p><i class="fa fa-phone w3-xxlarge w3-text-light-grey"></i></p>
+        <p>512312311</p>
+      </div>
+    </div>
+    <hr class="w3-opacity">
+    <form action="/action_page.php" target="_blank">
+      <div class="w3-section">
+        <label>Name</label>
+        <input class="w3-input w3-border" type="text" name="Name" required>
+      </div>
+      <div class="w3-section">
+        <label>Email</label>
+        <input class="w3-input w3-border" type="text" name="Email" required>
+      </div>
+      <div class="w3-section">
+        <label>Message</label>
+        <input class="w3-input w3-border" type="text" name="Message" required>
+      </div>
+      <button type="submit" class="w3-button w3-black w3-margin-bottom"><i class="fa fa-paper-plane w3-margin-right"></i>Send Message</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-32 w3-dark-grey">
+  <div class="w3-row-padding">
+    <div class="w3-third">
+      <h3>FOOTER</h3>
+      <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    </div>
+  
+    <div class="w3-third">
+      <h3>BLOG POSTS</h3>
+      <ul class="w3-ul w3-hoverable">
+        <li class="w3-padding-16">
+          <img src="/w3images/workshop.jpg" class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">Lorem</span><br>
+          <span>Sed mattis nunc</span>
+        </li>
+        <li class="w3-padding-16">
+          <img src="/w3images/gondol.jpg" class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">Ipsum</span><br>
+          <span>Praes tinci sed</span>
+        </li> 
+      </ul>
+    </div>
+
+    <div class="w3-third">
+      <h3>POPULAR TAGS</h3>
+      <p>
+        <span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">London</span>
+        <span class="w3-tag w3-grey w3-small w3-margin-bottom">IKEA</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">NORWAY</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">DIY</span>
+        <span class="w3-tag w3-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">Baby</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">Family</span>
+        <span class="w3-tag w3-grey w3-small w3-margin-bottom">News</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">Clothing</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">Shopping</span>
+        <span class="w3-tag w3-grey w3-small w3-margin-bottom">Sports</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">Games</span>
+      </p>
+    </div>
+
+  </div>
+  </footer>
+  
+  <div class="w3-black w3-center w3-padding-24">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></div>
+
+<!-- End page content -->
 </div>
-			<section id="one" class="wrapper special">
-				<div class="inner">
-					<header class="major">
-						<h2>MERCH NEWS</h2>
-					</header>
 
-					<div class="features">
-					{% for post in posts %}
-						<div class="feature">
-							<img src="{{ post.Update_Choices }}" style="width:90%">
-							<a href="https://docs.google.com/presentation/d/1lHFrkVCj0sGKA3mIMIlLGMSKG4MjsCazYXh-kR7mgqE/edit#slide=id.p" target="_blank">
-							<h3>{{ post.title }}</h3>
-							<em>{{ post.published_date }}</em>
-							<p>{{ post.text|slice:":200"}}</p></a>
-							<a href ="{% url 'post_detail' pk=post.pk %}" ><button type="button" class="btn btn-info">Info</button></a>
-						</div>
-					{% endfor %}
-					</div>
-				</div>
-			</section>
+<script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+</script>
 
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="copyright">
-					&copy; Created and Maintained by NA Merchandising Team
-				</div>
-			</footer>
-
-		<!-- Scripts -->
-			<script src="static/js/jquery.min.js"></script>
-			<script src="static/js/skel.min.js"></script>
-			<script src="static/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="static/js/main.js"></script>
-
-		<!-- Google Analytics Tracking -->
-			<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-			ga('create', 'UA-101662275-1', 'auto');
-			ga('send', 'pageview');
-
-			</script>
-			
 </body>
-
-
 </html>

@@ -27,9 +27,6 @@ models.FileField(upload_to='media/', blank=True, null=True)
 class Profile(models.Model):
 	user = models.OneToOneField(User, related_name='user', on_delete=models.CASCADE)
 	avitar = models.FileField(upload_to='media/', blank=True, null=True)
-	#avitar = models.FileField(verbose_name=_("Profile Picture"),
-	#							upload_to=upload_to("main.Profile.avitar", "profiles"),
-	#							format="Image", max_length=255, null=True, blank=True)
 	pictures = models.ImageField(storage=ps, null=True, blank=True)
 	FirstName = models.TextField(max_length=50, blank=True, default='')
 	FullName = models.TextField(max_length=50, blank=True, default='')
