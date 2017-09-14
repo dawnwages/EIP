@@ -30,8 +30,10 @@ and open the template in the editor.
   <div class="w3-row-padding">
  	{% for post in posts %} 
     <div class="w3-third w3-container w3-margin-bottom" style="float:left;">
-    
-      <img src="/w3images/mountains.jpg" alt="{{ post.title }}" style="width:100%" class="w3-hover-opacity">
+    <div><!-- w3-hover-opacity-->
+    </div>  
+     <img src="../media/{{ post.asset }}" alt="../media/{{ post.title }}"  class="postimg w3-hover-opacity">
+      <img src="{{ post.Update_Choices }}" alt="../{{ post.Update_Choices }}" style="max-width:100%; display: block; align-self: center;">
       <div class="w3-container w3-white" style="height:150px">
         <p><b>{{ post.published_date }}</b></p>
         <p>{{ post.text|slice:":200"}}...</p>

@@ -27,8 +27,18 @@
     {% if not user.is_authenticated %}
     <a href="/login/">Log In</a>
     {% else %}
-    <p>{{ user.username }}</p>
-    <a href="/logout/">Log In</a>
+    {{ user.profile.avitar }}
+    {{ user.User.avitar }}
+    {{ user.page_profile.avitar }}
+    {{ user.Profile.avitar }}
+    {{ username }}
+    {{ user.avitar }}
+    {{ Profile.avitar }}
+    {{ profile.avitar }}
+    words
+    <img src="{{ user.avitar }}" style="width:45%;" class="w3-round"><br><br>
+    <p>Welcome {{ user.username }},</p>
+    <a href="/logout/">Log Out</a>
     {% endif %}
     </b></h4>
     <p class="w3-text-grey">Welcome to the Merchandising Master!</p>
