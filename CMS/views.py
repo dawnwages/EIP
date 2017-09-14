@@ -27,12 +27,15 @@ def post_list(request):
     return render(request, 'CMS/post_list.html', {'posts': posts})
 
 def my_view(request):
-    avitar = None
     username = None
     if request.user.is_authenticated():
         username = request.user.username
-        avitar = request.Profile.avitar
     return render(request, 'CMS/base.html', username)
+
+def my_avi(request):
+    avitar = None
+    if request.user.is_authenticated():
+        avitar = request.Profile.avitar
     return render(request, 'CMS/base.html', avitar)
 
 
