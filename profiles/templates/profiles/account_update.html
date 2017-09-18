@@ -1,0 +1,81 @@
+{% extends 'CMS/base.html' %}
+
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+{% block content %}
+  <!-- Header -->
+  <header id="portfolio">
+    <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+    <div class="w3-container">
+    <h1><b>My Portfolio</b></h1>
+	    {% if user.is_authenticated %}
+			<a href="{% url 'post_new' %}" class="top-menu" data-toggle"tooltip" title="Click to add new post"><span class="glyphicon glyphicon-plus"></span></a>
+			<a href="{% url 'post_new' %}" class="top-menu" data-toggle"tooltip" title="Click to add new post"><h4>New Merch News?</h4></a>
+		{% endif %}
+    <div class="w3-section w3-bottombar w3-padding-16">
+      <span class="w3-margin-right">Filter:</span> 
+      <button class="w3-button w3-black">ALL</button>
+      <button class="w3-button w3-white"><i class="fa fa-diamond w3-margin-right"></i>Design</button>
+      <button class="w3-button w3-white w3-hide-small"><i class="fa fa-photo w3-margin-right"></i>Photos</button>
+      <button class="w3-button w3-white w3-hide-small"><i class="fa fa-map-pin w3-margin-right"></i>Art</button>
+    </div>
+    </div>
+  </header>
+  
+  <!-- First Photo Grid-->
+<div class="w3-container">
+    <h3>Profile Page:</h3><p>Please keep your information current. Thanks!</p>
+    <form action="." method="POST" class="padding">
+    {% csrf_token %} {{ noodle_form.as_p }}
+    <div class="divider"></div>
+    {{ formset.management_form }}
+    {{ formset.as_p }}
+    <button type="submit" class="btn-floating btn-large waves-light waves-effect">done</button>
+    history
+    </form>
+</div>
+
+        <div class="w3-container">
+
+      <h2>Onsite SKUS</h2>
+      <p>We welcome you to the merchandising team newsletter. Keep abreast of all North America eCommerce updates and changes on-glass</p>
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+      <table id="myTable" class="table table-striped">
+        <thead>
+          <tr class="header">
+            <th>Live Date</th>
+            <th>SKU Name</th>
+            <th>Series Name</th>
+            <th>Part Number</th>
+            <th>Article Number</th>
+            <th>Hard Drive</th>
+            <th>Screen Size</th>
+            <th>Price Tier</th>
+            <th>Brand</th>
+
+          </tr>
+        </thead>
+        <tbody>
+
+        {% for list in portfolio %}
+          <tr>
+            <td> {{ list.article.Series_Name }} </td>
+            <td> {{ list.live_date }}</td>
+            <td> {{ list.Friendly_Name }}</a></td>
+            <td> <a href="http://www3.lenovo.com/us/en/p/{{ list.SKU_Num }}">{{ list.Sku_Num }}</a></td>
+            <td> {{ list.article }} </td>
+            <td> {{ list.hd_choice }}GB </td>
+            <td> {{ list.ss_choice }} </td>
+            <td> {{ list.article.Brand_Type }} </td>
+          </tr>
+         {% endfor %}
+        </tbody>
+      </table>
+    </div>
+{% endblock %}
+
+  
