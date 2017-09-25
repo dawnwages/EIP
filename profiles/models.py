@@ -27,7 +27,7 @@ models.FileField(upload_to='media/', blank=True, null=True)
 class Profile(models.Model):
 	user = models.OneToOneField(User, related_name='user', on_delete=models.CASCADE)
 	avitar = models.FileField(upload_to='media/', blank=True, null=True)
-	pictures = models.ImageField(storage=ps, null=True, blank=True)
+	pictures = models.ImageField(storage=ps, null=True, blank=True) #TODO: Make sure that you change this to a list of picture to upload. The theme should change.
 	FirstName = models.TextField(max_length=50, blank=True, default='')
 	FullName = models.TextField(max_length=50, blank=True, default='')
 	bio = models.TextField(max_length=500, blank=True, default='')

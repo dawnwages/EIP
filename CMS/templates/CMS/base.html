@@ -34,11 +34,12 @@
     {{ username }}
     {{ user.avitar }}
     {{ Profile.avitar }}
-    {{ profile.avitar }}
+    {{ user.user_profile.avitar }}
     {{ avitar }}
-    words
-    <img src="{{ user.avitar }}" style="width:45%;" class="w3-round"><br><br>
+    words<br><br>
+    <img src="\static\img\dawn_wages.jpg" style="width:45%;" class="w3-round"><br><br>
     <p>Welcome {{ user.username }},</p>
+
     <a href="/logout/">Log Out</a>
     {% endif %}
     </b></h4>

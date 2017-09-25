@@ -24,10 +24,10 @@ from .models import Article, Sku
  #   return render(request, 'product/sku_list.html', {'skus': skus})
 
 def total_list(request):
-	#portfolio = Sku.objects.select_related('article__article_num')
-	portfolio = Sku.objects.select_related('article')
-	#queryset = portfolio.article
-   	return render(request, 'product/sku_list.html', {'portfolio': portfolio})
+    #portfolio = Sku.objects.select_related('article__article_num')
+    portfolio = Sku.objects.select_related('article')
+    #queryset = portfolio.article
+    return render(request, 'product/sku_list.html', {'portfolio': portfolio})
 
 def sku_detail(request, pk):
     sku = get_object_or_404(Sku, pk=pk)
